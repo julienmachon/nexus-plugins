@@ -1,0 +1,26 @@
+{
+  "name": "hello-world",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Julien Machon <julienmachon@gmail.com>",
+  "homepage": "https://github.com/julienmachon/nexus-plugins#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienmachon/nexus-plugins.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "clean": "rm -fr dist/"
+  },
+  "bugs": {
+    "url": "https://github.com/julienmachon/nexus-plugins/issues"
+  },
+  "devDependencies": {
+    "marked": "^0.7.0"
+  }
+}

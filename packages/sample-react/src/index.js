@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 const App = () => {
   const [count, setCount] = React.useState(0);
+  // return <p onClick={() => setCount(count + 1)}>I am react: {count}</p>;
   return React.createElement(
     "p",
     {

@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "lerna run build",
-    "start": "parcel index.html"
+    "start": "concurrently --kill-others \"parcel index.html\" \"lerna run build:watch --stream\"",
+    "start2": "concurrently --kill-others \"parcel index.html\""
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
@@ -15,7 +16,10 @@
     "@babel/preset-react": "^7.7.4",
     "@rollup/plugin-json": "^4.0.0",
     "@rollup/plugin-node-resolve": "^6.0.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
+    "@vue/babel-preset-app": "^4.1.1",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.1",
+    "css-loader": "^3.3.0",
     "lerna": "^3.19.0",
     "parcel": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.2.1",
@@ -23,7 +27,12 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0"
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-vue": "^5.1.4",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {
     "react": "^16.12.0",

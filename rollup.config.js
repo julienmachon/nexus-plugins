@@ -1,8 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
-import replace from "rollup-plugin-replace";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import VuePlugin from "rollup-plugin-vue";
+import replace from "@rollup/plugin-replace";
 
 const pkg = require(__dirname + "/package.json");
 const peerDeps = Object.keys(pkg.peerDependencies || {});
@@ -13,6 +13,14 @@ const externals = Object.keys(pkg.peerDependencies || {}).reduce(
   (prev, curr) => ({ ...prev, [curr]: curr }),
   {}
 );
+
+peerDeps.map(dep => {
+  console.log("For dep", dep);
+  const pathname = __dirname + "/node_modules/" + dep + "/package.json";
+  console.log("pathname", pathname);
+  const depPkg = require(__dirname + "/node_modules/" + dep + "/package.json");
+  console.log(depPkg.dependencies || {});
+});
 
 export default name => [
   {
@@ -41,7 +49,7 @@ export default name => [
         exclude
       }),
       replace({
-        "process.env.NODE_ENV": JSON.stringify("development")
+        "process.env.NODE_ENV": JSON.stringify("production")
       })
     ]
   }

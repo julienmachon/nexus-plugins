@@ -22,6 +22,6 @@
     "url": "https://github.com/julienmachon/nexus-plugins/issues"
   },
   "devDependencies": {
-    "marked": "^0.7.0"
+    "marked": "^4.0.10"
   }
 }
